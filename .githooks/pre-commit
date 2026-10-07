@@ -1,0 +1,10 @@
+#!/bin/sh
+# Block commits that add em dashes (U+2014 or its HTML/JS escapes) anywhere in the repo.
+EM=$(printf '\342\200\224')
+ESC_JS=$(printf '%s' '\' 'u2014')
+added=$(git diff --cached -U0 --no-color -- . ':!.githooks' | grep -E '^\+[^+]' | grep -n -F -e "$EM" -e '&mdash;' -e '&#8212;' -e "$ESC_JS")
+if [ -n "$added" ]; then
+  echo "Commit blocked: em dashes are not allowed in this project. Rewrite with a period, comma, colon or parentheses."
+  echo "$added" | head -20
+  exit 1
+fi
