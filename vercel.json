@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/rapid.html", "destination": "/", "permanent": true },
+    { "source": "/rapid", "destination": "/", "permanent": true }
+  ]
+}

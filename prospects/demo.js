@@ -1,7 +1,7 @@
 /* ============================================================
    PROSPECT CONFIG
    Copy this file to prospects/<slug>.js, edit the values, then open
-   rapid.html?p=<slug>. Capture screenshots with:
+   /?p=<slug>. Capture screenshots with:
      node tools/capture.mjs <slug> site=https://their-site.co.nz competitor-a=https://...
    Boxes and focus areas are percentages of the desktop screenshot
    (x/y from the top-left, w/h as a share of the image).
